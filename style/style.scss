@@ -1,19 +1,21 @@
+$arwColor:rgba(0,0,0,0.3);
 @mixin arrow($dir,$size){
 	@if $dir == left {
-		border-right: $size solid blue;
+		border-right: $size solid $arwColor;
 		border-top: $size solid transparent;
 		border-bottom: $size solid transparent;
 		position:absolute;
 		display:block;
 	}
 	@if $dir == right {
-		border-left: $size solid blue;
+		border-left: $size solid $arwColor;
 		border-top: $size solid transparent;
 		border-bottom: $size solid transparent;	
 		position:absolute;
 		display:block;
 	}
 }
+
 *{
 	margin:0;
 	padding:0;
@@ -50,12 +52,13 @@ margin: 15% auto;
 	width: 710px;
 	height: 400px;
 	margin:0 auto;
-	box-shadow: 4px 4px 6px rgba(0,0,0,0.4);
+	box-shadow: 2px 4px 6px rgba(0,0,0,0.4);
 		.slider{
-		width: 660px;
-		height: 360px;
-		padding: 20px 16px;
 		overflow:hidden;
+		width: 676px;
+		height: 360px;
+		padding: 20px 0;
+		margin: 0 17px;
 			.imageSlider{
 			margin:0;
 			height:inherit;
@@ -81,5 +84,12 @@ margin: 15% auto;
 	@include arrow(right,50px); 
 	top:150px;
 	left: 715px;
+	}
+	.right:hover{
+		border-left-color: rgba(0,0,0,0.9);
+		cursor:pointer;
+	}.left:hover{
+		border-right-color: rgba(0,0,0,0.9);
+		cursor:pointer;
 	}
 }

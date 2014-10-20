@@ -33,12 +33,13 @@ body {
     width: 710px;
     height: 400px;
     margin: 0 auto;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); }
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4); }
     .container .frame .slider {
-      width: 660px;
+      overflow: hidden;
+      width: 676px;
       height: 360px;
-      padding: 20px 16px;
-      overflow: hidden; }
+      padding: 20px 0;
+      margin: 0 17px; }
       .container .frame .slider .imageSlider {
         margin: 0;
         height: inherit;
@@ -50,7 +51,7 @@ body {
             width: 676px;
             height: 360px; }
   .container .left {
-    border-right: 50px solid blue;
+    border-right: 50px solid rgba(0, 0, 0, 0.3);
     border-top: 50px solid transparent;
     border-bottom: 50px solid transparent;
     position: absolute;
@@ -58,10 +59,16 @@ body {
     left: -55px;
     top: 150px; }
   .container .right {
-    border-left: 50px solid blue;
+    border-left: 50px solid rgba(0, 0, 0, 0.3);
     border-top: 50px solid transparent;
     border-bottom: 50px solid transparent;
     position: absolute;
     display: block;
     top: 150px;
     left: 715px; }
+  .container .right:hover {
+    border-left-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer; }
+  .container .left:hover {
+    border-right-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer; }
