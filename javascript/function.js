@@ -1,27 +1,30 @@
 $(document).ready(function(){
-	var $imageSlider = $('.imageSlider'),
-		$imageList = $imageSlider.find('li'),
-		$image = $imageList.find('img'),
-		imageWidth = $image[0].width,
-		imageLength = $image.length,
-		current = 1,
-		$click = $('.click');
+	var $imageSlider = $('.imageSlider'),//for the imageSlider
+		$sliderList = $imageSlider.find('li'),
+		$sliderImage = $sliderList.find('img'),
+		imageWidth = $sliderImage[0].width,
+		imageLength = $sliderImage.length,
+		current =0,
+		$click = $('.click'),
+		$imageList = $('.imageList'),//for the image list
+		$images = $imageList.find('li');
 		
 	$click.on('click',function(){
 		var direction = $(this).data('dir'),
-			location = imageWidth;
+		location = imageWidth;
+		addBorder('remove',$images,current);
 		(direction === 'next')? current++ : current--;
-		if(current -1 === imageLength){
-			current = 1;
+		if(current === imageLength){
+			current = 0;
 			location = 0;
-		}else if(current === 0){
-			current = imageLength;
+		}else if(current < 0){
+			current = imageLength-1;
 			location = (imageLength * imageWidth)-imageWidth;
 			direction ='next';
 		}
+		addBorder('add',$images,current);
 		transition(direction,location, $imageSlider);
 	});
-	
 	function transition(direction, location, imageSlider){
 		var unit;
 		if(direction && location !=0){
@@ -29,8 +32,8 @@ $(document).ready(function(){
 		}
 		imageSlider.animate({'margin-left': unit ? (unit+location):location},1000);
 	}
-	//set the variables
-	//click first the button
-	//after it was clicked
-	//animated the slider
+	function addBorder($class,$images,current){
+		var listImg = $images.eq(current);
+		($class === 'remove')? listImg.removeClass('active'): listImg.addClass('active');
+	}
 });

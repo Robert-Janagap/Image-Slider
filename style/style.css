@@ -1,3 +1,6 @@
+/* @function bgImage($folder,$imgName,$data,$rpt){
+	@return url("../$folder/$imgName.jpg") repeat
+} */
 * {
   margin: 0;
   padding: 0; }
@@ -25,7 +28,8 @@ body {
 
 .container {
   width: 90%;
-  margin: 15% auto; }
+  margin: 0 auto;
+  margin-top: 120px; }
   .container .frame {
     position: relative;
     background: rgba(0, 0, 0, 0.7);
@@ -33,6 +37,7 @@ body {
     width: 710px;
     height: 400px;
     margin: 0 auto;
+    margin-top: 10px;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4); }
     .container .frame .slider {
       overflow: hidden;
@@ -72,3 +77,42 @@ body {
   .container .left:hover {
     border-right-color: rgba(0, 0, 0, 0.9);
     cursor: pointer; }
+  .container .feature {
+    background: rgba(0, 0, 0, 0.7);
+    width: 710px;
+    margin: 0 auto;
+    height: 84px;
+    border-radius: 5px; }
+    .container .feature .imageList {
+      width: 676px;
+      margin: 0 auto;
+      height: 70px;
+      padding-top: 7px; }
+      .container .feature .imageList li {
+        display: block;
+        float: left;
+        line-height: 70px;
+        text-indent: -9999px;
+        transition: border-bottom 1s linear; }
+  .container .image1 {
+    background: url("../jpg/1.jpg") no-repeat;
+    width: 20%;
+    background-size: 135px 70px; }
+  .container .image2 {
+    background: url("../jpg/2.jpg") no-repeat;
+    width: 20%;
+    background-size: 135px 70px; }
+  .container .image3 {
+    background: url("../jpg/3.jpg") no-repeat;
+    width: 20%;
+    background-size: 135px 70px; }
+  .container .image4 {
+    background: url("../jpg/4.jpg") no-repeat;
+    width: 20%;
+    background-size: 135px 70px; }
+  .container .image5 {
+    background: url("../jpg/5.jpg") no-repeat;
+    width: 20%;
+    background-size: 135px 70px; }
+  .container .active {
+    border-bottom: 7px solid #ff0000; }
