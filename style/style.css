@@ -93,7 +93,8 @@ body {
         float: left;
         line-height: 70px;
         text-indent: -9999px;
-        transition: border-bottom 1s linear; }
+        transition: border-bottom 1s linear;
+        cursor: pointer; }
   .container .image1 {
     background: url("../jpg/1.jpg") no-repeat;
     width: 20%;
